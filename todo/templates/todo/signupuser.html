@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signupuser.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>
+                Todowoo
+            </h1>
+            <ul>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="signupform">
+            <div class="form-container">
+                <h1>Sign up</h1>
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    {% if error %}
+                    <div class="error">{{error}}</div>
+                    {% endif %}
+                    <p>Username</p>
+                    <input type="text" name="username"> <br>
+                    <p>Password</p>
+                    <input type="password" name="password1"> <br>
+                    <p>Confirm password</p>
+                    <input type="password" name="password2"><br>
+                    <button type="submit">Sign up {% csrf_token %}</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

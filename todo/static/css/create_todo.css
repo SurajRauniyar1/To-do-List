@@ -1,0 +1,33 @@
+.todo-creation-form{
+    padding-top: 20px;
+}
+.todo-creation-form p{
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+.todo-creation-form input{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+#important-checkbox{
+    margin-left: 0;
+}
+.todo-creation-form span{
+    padding-left: 20px;
+}
+.create-buttons{
+    margin-left: 20px;
+}
+#titlefield{
+    width: 96.5%;
+    height: 2.2rem;
+    padding-left: 10px;
+}
+#memofield {
+    width: 96.5%;
+    height: 15rem;
+    margin-left: 20px;
+    padding: 10px;
+    resize: none;
+}

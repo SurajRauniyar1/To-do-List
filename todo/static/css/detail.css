@@ -1,0 +1,48 @@
+.container-detail h1{
+    padding: 20px;
+    font-size: 2rem;
+}
+.container-detail p{
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+.container-detail h3{
+    padding-left: 20px;
+    font-weight: 200;
+    font-size: 1rem;
+}
+.buttons{
+    display: flex;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.btn-red{
+    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    margin: 0px 0px 10px 0px;
+    border-radius: 5px;
+}
+.btn-green{
+    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(46, 167, 22);
+    color: white;
+    text-decoration: none;
+    margin: 0px 0px 10px 0px;
+    border-radius: 5px;
+}
+.btn-gray{
+    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: gray;
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px 0px 10px;
+    border-radius: 5px;
+}

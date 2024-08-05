@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/current.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_todo.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>
+                Todowoo
+            </h1>
+            <ul>
+                <li><li><form method="POST" action="{% url 'logoutuser' %}">{% csrf_token %}<button type="submit" class="nav-btn">Logout</button></form></li></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container-current container-detail">
+            <div class="nav">
+                <h1>Todos</h1>
+                <ul>
+                    <li class="active">
+                        <a href="{% url 'current_todos' %}">Current</a>
+                    </li>
+                    <li><a href="{% url 'completed_todos' %}">Completed</a></li>
+                    <li><a href="#" id="current">Create</a></li>
+                </ul>
+            </div>
+            <div class="todo-creation-form">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <p>Title</p>
+                    <input type="text" id="titlefield" name="titles">
+                    <p>Memo</p>
+                    <textarea name="memo" id="memofield" cols="30" rows="10"></textarea> <br>
+                    <span>Important</span>
+                    <input type="checkbox" name="Important" id="important-checkbox"><br>
+                    <div class="create-buttons">
+                    <button class="btn-green" type="submit">Save</button>
+                    <button class="btn-red" type="reset">Discard</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

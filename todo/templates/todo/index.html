@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoWoo</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>
+                Todowoo
+            </h1>
+            <ul>
+                <li><a href="{% url 'loginuser' %}">Login</a></li>
+                <li><a href="{% url 'signupuser' %}">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h1>Time is precious</h1>
+            <h2>Organize your day effortlessly</h2>
+            <a href="{% url 'signupuser' %}" class="btn btn-primary text-white">Get started</a>
+            <h3>Already a user? <a href="{% url 'loginuser' %}">login</a></h3>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>©TodoWoo all rights reserved</p>
+    </footer>
+</body>
+</html>

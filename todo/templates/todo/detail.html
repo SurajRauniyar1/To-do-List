@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/current.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1>
+                Todowoo
+            </h1>
+            <ul>
+                <li><li><form method="POST" action="{% url 'logoutuser' %}">{% csrf_token %}<button type="submit" class="nav-btn">Logout</button></form></li></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="container-current container-detail">
+            <div class="nav">
+                <h1>Todos</h1>
+                <ul>
+                    <li class="active">
+                        <a href="{% url 'current_todos' %}">Current</a>
+                    </li>
+                    <li><a href="{% url 'completed_todos' %}">Completed</a></li>
+                    <li><a href="{% url 'create_todo' %}">Create</a></li>
+                    <li><a href="#" id="current">Detail</a></li>
+                </ul>
+            </div>
+            <h1>{{todo.title}}</h1>
+            <p><pre style="margin-left: 20px;">{{todo.memo}}</pre></p>
+            <h3>{{todo.created}}</h3>
+            <div class="buttons">
+            <form method="post" action="{% url 'complete_todo' todo.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-green">Completed</button>
+            </form>
+            <form action="{% url 'edit_todo' todo.id %}" method="GET">
+                {% csrf_token %}
+                <button type="submit" class="btn-gray">Edit</button>
+            </form>
+            <form method="POST" action="{% url 'delete_todo' todo.id%}">
+                {% csrf_token %}
+                <button type="submit" class="btn-red">Delete</button>
+            </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
